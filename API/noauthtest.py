@@ -30,11 +30,12 @@ parameters = {
     "lat": 37.5,
     "lon": -77.5
 }
-#response = requests.get("http://api.open-notify.org/iss-pass.json", params=parameters)
-#print(response.status_code)
-#with open('iss-pass.json', 'w') as f:
-#    json.dump(response.json()['response'], f, indent=4)
-
+response = requests.get("http://api.open-notify.org/iss-pass.json", params=parameters)
+print(response.status_code)
+## dump into output file (for purpose of testing after)
+with open('iss-pass.json', 'w') as f:
+    json.dump(response.json()['response'], f, indent=4)
+## pull from output file
 with open('iss-pass.json') as f:
     times = json.load(f)
 print(json.dumps(times, indent=4))
