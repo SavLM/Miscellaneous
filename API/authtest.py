@@ -16,7 +16,7 @@ def jloadfile(obj, fname):
 
 ## API Key is like a password for using API, used to authenticate yourself
 ## Create an api account and grab API Key
-API_KEY = 'xxxxxxxxxx'
+API_KEY = 'xxxxxxxxxx' ################ ADD API KEY HERE #########################
 
 ## Identify yourself using headers
 ## Last.fm uses user-agent to identify
