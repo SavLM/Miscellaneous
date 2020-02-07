@@ -7,12 +7,14 @@ auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
 client = Client(account_sid, auth_token)
 
 def lambda_handler(event, context):
-    message = client.messages \
-        .create(
-            body='Goat! -From your friendly, neighborhood Savvy',
-            from_='+12092059061',
-            media_url=['https://placegoat.com/200/200'],
-            to=['+15408399215', ]
-        )
+    numbers = ['+15408399215', '+14346889846']
+    for number in numbers:
+        message = client.messages \
+            .create(
+                body='\n\nFrom your friendly, neighborhood Savvy: \nA goat!',
+                from_='+12092059061',
+                media_url=['https://placegoat.com/200/200'],
+                to=number
+            )
     print(message.sid)
     return "Success!"
